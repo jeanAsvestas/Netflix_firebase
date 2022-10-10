@@ -4,11 +4,11 @@ import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
 import TextField from '@mui/material/TextField';
 import { auth } from '../../firebase';
-import { Link } from 'react-router-dom';
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
 } from 'firebase/auth';
+import { FirebaseError } from '@firebase/util';
 
 const FormValues = z.object({
   email: z.string().min(1, { message: 'Please enter an email!' }),
@@ -35,7 +35,10 @@ export const SignInForm = () => {
       );
       console.log(res);
     } catch (err) {
-      alert(err.message);
+      if (err instanceof FirebaseError) {
+        console.log(err.message);
+        alert(err.message);
+      }
     }
   };
   const onRegister: SubmitHandler<FormValuesType> = async (data) => {
@@ -47,7 +50,10 @@ export const SignInForm = () => {
       );
       console.log(res);
     } catch (err) {
-      alert(err.message);
+      if (err instanceof FirebaseError) {
+        console.log(err.message);
+        alert(err.message);
+      }
     }
   };
 
