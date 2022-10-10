@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import PrivateRoute from './protectedRoute/PrivateRoute';
 import React from 'react';
 import { Home } from './pages/home-page/Home';
+import { Login } from './pages/login-page/Login';
 
 export const App = () => {
   return (
@@ -10,10 +11,17 @@ export const App = () => {
       {/* <React.StrictMode> */}
       <Router basename="">
         <Routes>
-          <Route path="*" element={<p>Not Found</p>} />
+          <Route
+            path="*"
+            element={<p style={{ color: 'white' }}>Not Found</p>}
+          />
           <Route path="">
             <Route index element={<Home />} />
-            <Route path="keypad-showcase" element={<p>ELement3</p>} />
+            <Route path="login" element={<Login />} />
+            <Route
+              path="about"
+              element={<p style={{ color: 'white' }}>About Page</p>}
+            />
             <Route path="pbcomps">
               <Route index element={<p>Routes for components</p>} />
               <Route

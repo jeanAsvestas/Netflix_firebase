@@ -32,7 +32,7 @@ export const Banner = () => {
       style={{
         backgroundImage: movie
           ? `url(${process.env.REACT_APP_BASE_IMG_URL}${movie.backdrop_path})`
-          : `url(${process.env.REACT_APP_BASE_IMG_URL})`,
+          : `url(${process.env.REACT_APP_DEFAULT_BASE_IMG_URL})`,
       }}
     >
       <div className="banner__contents">

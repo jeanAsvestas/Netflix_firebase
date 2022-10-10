@@ -6,7 +6,7 @@ import { requests } from '../../services/requests-urls';
 
 export const Home = () => {
   return (
-    <div className="homeScreen">
+    <div className="home">
       <NavBar />
       <Banner />
       <Row isPoster={false} request={requests.originals} />
