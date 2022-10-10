@@ -1,9 +1,10 @@
 import './Login.scss';
+import { useState } from 'react';
 import { useForm, SubmitHandler } from 'react-hook-form';
 import z from 'zod';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { useState } from 'react';
-
+import TextField from '@mui/material/TextField';
+import { SignInForm } from '../../components/signin-form/Sign-in-form';
 const FormValues = z.object({
   email: z.string().min(1, { message: 'Please enter an email!' }),
 });
@@ -39,7 +40,7 @@ export const Login = () => {
       </div>
       <div className="login__body">
         {signInState ? (
-          <div>lets sign in</div>
+          <SignInForm />
         ) : (
           <>
             <h1>Unlimited films, TV programmes and more.</h1>
@@ -50,18 +51,22 @@ export const Login = () => {
                 onSubmit={handleSubmit(onSubmit)}
                 role="presentation"
               >
-                <input
-                  {...register('email', { required: true })}
-                  type="text"
-                  id="email"
-                  placeholder="Email address"
-                  disabled={isSubmitting}
-                />
-                <button className="login__get-started-button">
-                  Get Started
-                </button>
+                <div className="login__input-container">
+                  <TextField
+                    {...register('email')}
+                    type="text"
+                    id="email"
+                    label="Email address"
+                    disabled={isSubmitting}
+                    variant="filled"
+                    fullWidth
+                  />
+                  <button className="login__get-started-button">
+                    Get Started
+                  </button>
+                </div>
                 {errors.email && (
-                  <p className="error-message">{errors.email.message}</p>
+                  <h2 className="error-message">{errors.email.message}</h2>
                 )}
               </form>
             </div>

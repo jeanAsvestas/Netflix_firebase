@@ -41,9 +41,10 @@
 
   .login__body {
     position: absolute;
-    top: 30%;
+    top: 25%;
     z-index: 1;
-    margin: 0 auto;
+    left: 10%;
+    right: 10%;
     color: white;
     padding: 20px;
     text-align: center;
@@ -62,11 +63,20 @@
 
   .login__form-container {
     margin: 20px;
+
+    .login__input-container {
+      margin: 0 auto;
+      padding-left: auto;
+      padding-right: auto;
+      width: 60%;
+      display: flex;
+      align-items: stretch;
+    }
     input {
       padding: 10px;
       outline-width: 0;
-      height: 30px;
-      width: 30%;
+      height: 33px;
+      background-color: white;
       max-width: 600px;
     }
     button {
@@ -77,6 +87,13 @@
       color: #fff;
       background-color: #e50914;
       cursor: pointer;
+      white-space: nowrap;
+    }
+  }
+  @media screen and (max-width: 708px) {
+    .login__input-container {
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 }
