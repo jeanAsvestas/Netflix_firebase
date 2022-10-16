@@ -42,7 +42,7 @@ export const Login = () => {
         {signInState ? (
           <SignInForm />
         ) : (
-          <>
+          <div>
             <h1>Unlimited films, TV programmes and more.</h1>
             <h2>Watch anywhere. Cancel at any time.</h2>
             <div className="login__form-container">
@@ -70,7 +70,7 @@ export const Login = () => {
                 )}
               </form>
             </div>
-          </>
+          </div>
         )}
       </div>
     </div>

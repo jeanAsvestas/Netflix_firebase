@@ -13,19 +13,37 @@
     display: flex;
     justify-content: space-between;
 
-    .navBar__logo {
+    .navBar__button-logo {
       position: fixed;
       left: 20px;
       width: 80px;
-      object-fit: contain;
       cursor: pointer;
+      padding: 0;
+      border: none;
+      background: none;
+
+      .navBar__logo {
+        position: relative;
+        width: 80px;
+        object-fit: contain;
+        cursor: pointer;
+      }
     }
-    .navBar__avatar {
+    .navBar__button-avatar {
       cursor: pointer;
       position: fixed;
       right: 20px;
       width: 30px;
       height: 30px;
+      padding: 0;
+      border: none;
+
+      .navBar__avatar {
+        cursor: pointer;
+        position: relative;
+        width: 30px;
+        height: 30px;
+      }
     }
   }
 }

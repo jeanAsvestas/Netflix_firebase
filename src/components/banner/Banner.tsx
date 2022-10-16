@@ -25,7 +25,7 @@ export const Banner = () => {
   const truncate = (string: string, n: number) => {
     return string?.length > n ? string.substr(0, n - 1).concat('...') : string;
   };
-  console.log(movie);
+
   return (
     <header
       className="banner"

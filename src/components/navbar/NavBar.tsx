@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import './NavBar.scss';
 
 export const NavBar = () => {
   const [show, handleShow] = useState(false);
+  const navigate = useNavigate();
 
   const navBarTransition = () => {
     if (window.scrollY > 100) {
@@ -20,16 +22,24 @@ export const NavBar = () => {
   return (
     <div className={`navBar ${show && 'navBar__black'}`}>
       <div className="navBar__contents">
-        <img
-          className="navBar__logo"
-          src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
-          alt="netflix logo"
-        />
-        <img
-          className="navBar__avatar"
-          src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
-          alt="avatar png"
-        />
+        <button className="navBar__button-logo" onClick={() => navigate('/')}>
+          <img
+            className="navBar__logo"
+            src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
+            alt="netflix logo"
+          />
+        </button>
+
+        <button
+          className="navBar__button-avatar"
+          onClick={() => navigate('/profile')}
+        >
+          <img
+            className="navBar__avatar"
+            src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png"
+            alt="avatar png"
+          />
+        </button>
       </div>
     </div>
   );

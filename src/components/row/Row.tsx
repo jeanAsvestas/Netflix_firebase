@@ -27,7 +27,7 @@ export const Row = ({ request, isPoster }: RowProps) => {
     getMovies();
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log(isPoster, !isPoster);
+
   return (
     <div className="row">
       <h2>{request.title}</h2>
