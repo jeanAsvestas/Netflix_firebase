@@ -82,7 +82,7 @@ export const SignInForm = () => {
         <div className="sign-in__input-container">
           <TextField
             {...register('password')}
-            type="text"
+            type="password"
             id="password"
             label="Password"
             disabled={isSubmitting}

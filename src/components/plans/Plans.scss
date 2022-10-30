@@ -1,0 +1,25 @@
+.plans-container__plan {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  opacity: 0.8;
+
+  button,
+  .plans-container__current-package {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+  }
+
+  .plans-container__current-package {
+    background-color: gray;
+  }
+}
+
+.plans-container__plan:hover {
+  opacity: 1;
+}
