@@ -10,6 +10,7 @@ import {
   onSnapshot,
   addDoc,
   DocumentData,
+  DocumentSnapshot,
 } from 'firebase/firestore';
 import { selectUser } from '../../app/store/userReducer';
 import { useSelector } from 'react-redux';
@@ -104,9 +105,10 @@ export const Plans = () => {
         cancel_url: window.location.origin,
       });
       console.log(sessionRef);
-      onSnapshot(sessionRef, async (d) => {
-        const { sessionId, error } = d.data();
+      onSnapshot(sessionRef, async (d: DocumentSnapshot<DocumentData>) => {
+        const { sessionId, error } = d.data() as DocumentData;
         if (error) {
+          // const { error } = d.data();
           alert(`An error occured: ${error.message}`);
         }
         if (sessionId) {
