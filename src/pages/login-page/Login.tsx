@@ -35,7 +35,6 @@ export const Login = () => {
           src="https://upload.wikimedia.org/wikipedia/commons/7/7a/Logonetflix.png"
           alt="netflix_logo"
         />
-        <button className="login__sign-in">Sign In</button>
         <div className="login__gradient" />
       </div>
       <div className="login__body">
